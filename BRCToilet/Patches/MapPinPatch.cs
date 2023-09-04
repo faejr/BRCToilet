@@ -30,7 +30,6 @@ public class MapPinPatch
 
         if (m_pinType == MapPin.PinType.Pin)
         {
-            // Plugin.Log.LogInfo("Refreshing PublicToilet");
             var m_ObjectiveObject = traverse.Field<GameObject>("m_ObjectiveObject").Value;
             if (m_ObjectiveObject.GetComponent<PublicToilet>().CanSwap) {
                 traverse.Method("EnableMapPinGameObject").GetValue();

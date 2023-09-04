@@ -61,7 +61,6 @@ public class MapControllerPatch
 
         var m_PinPrefabs = traverse.Field<Dictionary<MapPin.PinType, GameObject>>("m_PinPrefabs").Value;
         m_PinPrefabs[MapPin.PinType.Pin] = publicToiletPrefab;
-        Plugin.Log.LogInfo("Set up new prefab :)");
     }
 
     private static Material CreateParticleMaterial(ParticleSystemRenderer particleSystemRenderer)
@@ -80,7 +79,7 @@ public class MapControllerPatch
     {
         if (pinType == MapPin.PinType.Pin)
         {
-            Plugin.Log.LogInfo("Creating toilet pin");
+            Plugin.Log.LogDebug("Creating toilet pin");
             var traverse = Traverse.Create(__instance);
             var m_PinPrefabs = traverse.Field<Dictionary<MapPin.PinType, GameObject>>("m_PinPrefabs").Value;
             var m_PinsGroup = traverse.Field<Transform>("m_PinsGroup").Value;

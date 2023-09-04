@@ -18,11 +18,9 @@ public class ToiletManager
 
     private void StageInit()
     {
-        Plugin.Log.LogInfo("Stage init uwu");
-
         var publicToilets = GetPublicToilets();
 
-        Plugin.Log.LogInfo("Found " + publicToilets.Length + " toilets!");
+        Plugin.Log.LogDebug("Found " + publicToilets.Length + " toilets!");
 
         foreach (var toilet in publicToilets) {
             createToiletPin(toilet);

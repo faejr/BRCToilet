@@ -9,9 +9,10 @@ using System.Drawing;
 
 namespace BRCToilet
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+    [BepInPlugin("gay.faejr.plugin.brctoilet", PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
     public class Plugin : BaseUnityPlugin
     {
+        public static string PLUGIN_GUID = "gay.faejr.plugin.brctoilet";
         public static ManualLogSource Log = null!;
 
         public static string DisplayToiletRadarKey = "Display toilet radar";
@@ -32,8 +33,6 @@ namespace BRCToilet
 
         private void Awake()
         {
-            // Plugin startup logic
-            Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
             Log = Logger;
 
             DisplayToiletRadar = Config.Bind("General", DisplayToiletRadarKey, true);

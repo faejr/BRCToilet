@@ -43,3 +43,5 @@ msbuild.err
 msbuild.wrn
 
 GameLibs/*.dll
+
+build.ps1
